@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objeto String - Adriana Fuentes</title>
+  <style>
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #e1bee7);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 40px;
+      color: #4a148c;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: #6a1b9a;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 700px;
+      width: 90%;
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    input {
+      padding: 10px;
+      width: 70%;
+      border: 2px solid #ce93d8;
+      border-radius: 8px;
+      margin-top: 10px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #ab47bc;
+      box-shadow: 0 0 8px #ba68c8;
+    }
+
+    button {
+      background-color: #ba68c8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #9c27b0;
+      transform: scale(1.05);
+    }
+
+    #resultado {
+      margin-top: 20px;
+      background-color: #f3e5f5;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: left;
+      color: #4a148c;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      color: #6a1b9a;
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Objeto String en JavaScript</h1>
+    <p><strong>Estudiante:</strong> Adriana Lucía Fuentes Gómez</p>
+    <p><strong>Objeto:</strong> String</p>
+  </header>
+
+  <div class="card">
+    <h2>Ejemplo práctico</h2>
+    <p>Escribe una palabra o frase para analizarla con métodos del objeto <b>String</b>:</p>
+    <input type="text" id="texto" placeholder="Escribe aquí tu texto..." />
+    <button onclick="mostrarResultados()">Analizar</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <footer>
+    Proyecto académico Especialidad en Sistemas 💻🌸
+  </footer>
+
+  <script>
+    function mostrarResultados() {
+      let texto = document.getElementById("texto").value.trim();
+      if (texto === "") {
+        document.getElementById("resultado").innerHTML = "<b>Por favor escribe algo para analizar 💬</b>";
+        return;
+      }
+
+      let resultado = `
+        <b>Texto original:</b> ${texto}<br>
+        <b>Longitud:</b> ${texto.length} caracteres<br>
+        <b>Mayúsculas:</b> ${texto.toUpperCase()}<br>
+        <b>Minúsculas:</b> ${texto.toLowerCase()}<br>
+        <b>Primera letra:</b> ${texto.charAt(0)}<br>
+        <b>Sin espacios:</b> ${texto}<br>
+        <b>Reemplazando 'a' por '@':</b> ${texto.replace(/a/gi, "@")}<br>
+      `;
+      document.getElementById("resultado").innerHTML = resultado;
+    }
+  </script>
+</body>
+</html>
